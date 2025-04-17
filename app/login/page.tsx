@@ -20,13 +20,17 @@ import {
   FaLinkedin,
   FaTwitter,
 } from "react-icons/fa";
-import { signIn, useSession } from "next-auth/react";
+import { signIn, signOut, useSession } from "next-auth/react";
 
 const Login = () => {
   const [formValue, setFormValue] = useState({ email: "", password: "" });
   const { data: session } = useSession();
   const submit = async (e: FormEvent) => {
     e.preventDefault();
+    // signOut({
+    //   email:formValue.email
+    //   password:formValue.password
+    // })
 
     setFormValue({ email: "", password: "" });
   };
